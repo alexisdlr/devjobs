@@ -1,6 +1,7 @@
 "use client";
-import { Moon, Sun } from "lucide-react";
 import { useThemeStore } from "../store/darkMode";
+import { IoMdSunny  } from "react-icons/io";
+import { IoMoon } from "react-icons/io5";
 
 const SwitcherTheme = () => {
   const { toggleDarkMode } = useThemeStore();
@@ -12,9 +13,9 @@ const SwitcherTheme = () => {
         onClick={toggleDarkMode}
         className="hover:opacity-80 p-2 lg:p-3 rounded-full bg-lightgrey bg-opacity-20 transition-all text-white dark:text-darkText"
       >
-        {darkMode ? <Sun className="size-4 lg:size-6" /> : <Moon className="size-4 lg:size-6" />}
+        {darkMode ? <IoMdSunny className="size-4 lg:size-6" /> : <IoMoon className="size-4 lg:size-6" />}
       </button>
-      <span className="text-white font-semibold text-xs lg:text-sm">{darkMode ? "Light Mode": "Dark Mode"}</span>
+      <span className="text-white font-semibold text-xs md:text-sm lg:text-md">{darkMode ? "Light Mode": "Dark Mode"}</span>
     </div>
   );
 };
