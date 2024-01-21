@@ -4,7 +4,7 @@ export async function fetchData() {
       ? "https://my-json-server.typicode.com/typicode/demo/"
       : "http://localhost:3000";
     
-    await new Promise(resolve => setTimeout(resolve, 2000)); // Esperar 3 segundos
+    await new Promise(resolve => setTimeout(resolve, 1500)); // Esperar 3 segundos
 
     const response = await fetch(`${API_URL}/data.json`);
     const data = await response.json();

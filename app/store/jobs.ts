@@ -3,6 +3,7 @@ import { create } from "zustand";
 import json from "../../public/data.json";
 interface State {
   jobs: JobPosting[];
+  getJobs: (position?: string) => Promise<void>;
 }
 
 const API_URL =
@@ -13,5 +14,16 @@ const API_URL =
 export const useJobStore = create<State>()((set) => {
   return {
     jobs: json,
+    getJobs: async (position) => {
+      try {
+        const response = await fetch(`${API_URL}/data.json`);
+        const data = await response.json();
+
+        position ? set({ jobs: data.filter((job: JobPosting) => job.position.toLowerCase().includes(position.toLowerCase())) }) :
+        set({ jobs: data });
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    },
   };
 });

@@ -1,10 +1,12 @@
 import { JobPosting } from "@/types";
-import { useJobStore } from "../store/jobs";
 import JobItem from "./JobItem";
-import { fetchData } from "../getData";
 
-const Board = async () => {
-  const jobs = await fetchData();
+interface BoardProps {
+  jobs: JobPosting[];
+}
+
+const Board = async ({jobs}: BoardProps) => {
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // simulate loading
   const numJobsToShow = 12; 
   const jobsToShow = jobs.slice(0, numJobsToShow);
   return (

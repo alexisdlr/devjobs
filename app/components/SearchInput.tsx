@@ -20,7 +20,7 @@ const SearchInput = () => {
       {
         url: pathname,
         query: {
-          title: debouncedValue,
+          position: debouncedValue,
           location: currentLocation,
         },
       },
