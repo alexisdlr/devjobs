@@ -1,45 +1,37 @@
-"use client";
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 import Board from "../components/Board";
 import Header from "../components/Header";
 import Navbar from "../components/Navbar";
-import { useThemeStore } from "../store/darkMode";
 import BoardSkeleton from "../components/BoardSkeleton";
-import { useJobStore } from "../store/jobs";
 
 
 interface searchParamsProps {
   searchParams: {
     position: string;
+    location: string
   };
 }
+
 export default function Home({searchParams}: searchParamsProps) {
-  const { darkMode } = useThemeStore();
-  const getJobs = useJobStore((state) => state.getJobs);
-  const jobs = useJobStore((state) => state.jobs);
-  
-  useEffect(() => { 
-    getJobs(searchParams.position);
-  }, [searchParams.position]);
-  
-  return (
-    <main className={`${darkMode ? "dark" : ""} h-full transition`}>
-      <div className=" dark:bg-midnight pb-6 bg-lightgrey">
+    const { position, location } = searchParams;
+    return (
+    <main className={` dark:bg-midnight h-full transition-all bg-lightgrey`}>
+      <div className=" pb-6 ">
         <Header />
         <div className="relative">
           <Navbar />
         </div>
-        <Suspense
+        <Suspense 
           fallback={
             <>
             <div className="hidden lg:block my-20 max-w-5xl mx-auto">
-              <BoardSkeleton isDarkMode={darkMode} />
+              <BoardSkeleton isDarkMode={false} />
             </div>
             <div className="lg:hidden block my-20 max-w-5xl mx-auto">cargando...</div>
             </>
           }
         >
-          <Board jobs={jobs} />
+          <Board location={location} position={position} />
         </Suspense>
 
         <div className="max-w-5xl pb-6 w-full mx-auto flex items-center justify-center">

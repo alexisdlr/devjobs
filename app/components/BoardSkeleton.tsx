@@ -73,9 +73,9 @@ const BoardSkeleton = ({
       viewBox={`0 0 ${width} ${height}`}
       width={width}
       height={height}
-      foregroundColor={isDarkMode ? '#9DAEC2' : '#ecebeb'}
-      backgroundColor={isDarkMode ? '#1f2937' : '#f3f3f3'}
-      className={`${isDarkMode ? 'bg-gray-800' : ''}`}
+      foregroundColor={'#ecebeb'}
+      backgroundColor={'#f3f3f3'}
+      className={'dark:bg-gray-800'}
       {...props}
     >
       {list}

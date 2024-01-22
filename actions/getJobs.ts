@@ -1,10 +1,5 @@
-import { JobPosting } from "@/types";
 
-type GetJobsProps = {
-  position: string;
-  location: string ;
-};
-export const getJobs = async ({position, location}: GetJobsProps) => {
+export const getJobs = async () => {
   try {
     const API_URL = process.env.NODE_ENV === "production"
       ? "https://https://javascript-quizz-gilt.vercel.app/"
@@ -14,9 +9,9 @@ export const getJobs = async ({position, location}: GetJobsProps) => {
 
     const response = await fetch(`${API_URL}/data.json`);
     const data = await response.json();
-    const filteredData = data.filter((job: JobPosting) => job.position.toLowerCase().includes(position.toLowerCase()) && job.location.toLowerCase().includes(location.toLowerCase()))
+
     
-    return filteredData;
+    return data;
   } catch (error) {
     console.error("Error fetching data:", error);
     return null;

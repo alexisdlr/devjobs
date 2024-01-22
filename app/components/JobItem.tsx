@@ -1,4 +1,5 @@
 import { JobPosting } from "@/types";
+import Link from "next/link";
 interface JobItemProps {
   data: JobPosting;
 }
@@ -18,9 +19,9 @@ const JobItem = ({ data }: JobItemProps) => {
           <div className="w-1 h-1 bg-slate-500 rounded-full" />
           <span className="text-darkgray">{data.contract}</span>
         </div>
-        <h2 className="text-verydarkblue dark:text-white font-bold text-xl my-2">
+        <Link href={`/detail/${data.id}`} className="text-verydarkblue dark:text-white font-bold text-xl my-2">
           {data.position}
-        </h2>
+        </Link>
         <div className="flex flex-col text-sm 2xl:text-base">
           <span className="text-darkgray">{data.company}</span>
           
