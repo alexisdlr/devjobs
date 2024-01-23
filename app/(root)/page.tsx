@@ -15,7 +15,7 @@ interface searchParamsProps {
 export default function Home({searchParams}: searchParamsProps) {
     const { position, location } = searchParams;
     return (
-    <main className={` dark:bg-midnight h-full transition-all bg-lightgrey`}>
+    <main className={` dark:bg-midnight min-h-full transition-all bg-lightgrey`}>
       <div className=" pb-6 ">
         <Header />
         <div className="relative">

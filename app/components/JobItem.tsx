@@ -19,7 +19,7 @@ const JobItem = ({ data }: JobItemProps) => {
           <div className="w-1 h-1 bg-slate-500 rounded-full" />
           <span className="text-darkgray">{data.contract}</span>
         </div>
-        <Link href={`/detail/${data.id}`} className="text-verydarkblue dark:text-white font-bold text-xl my-2">
+        <Link href={`/detail/${data.id}`} className="text-verydarkblue hover:text-darkgray dark:text-white dark:hover:text-darkgray font-bold text-xl my-2 transition-all ">
           {data.position}
         </Link>
         <div className="flex flex-col text-sm 2xl:text-base">

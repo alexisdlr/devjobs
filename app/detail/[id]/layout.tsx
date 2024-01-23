@@ -7,10 +7,10 @@ export default function DetailLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className={` h-full transition`}>
-      <div className=" dark:bg-midnight pb-6 bg-lightgrey">
+    <main className={` dark:bg-midnight min-h-full transition-all bg-lightgrey`}>
+      <div className="pb-6">
         <Header />
-       
+
         {children}
       </div>
     </main>

@@ -1,5 +1,6 @@
 import { getJobs } from "@/actions/getJobs";
 import { JobPosting } from "@/types";
+import HeaderDetail from "./_components/HeaderDetail";
 
 export default async function DetailPage({
   params,
@@ -8,12 +9,12 @@ export default async function DetailPage({
 }) {
   const { id } = params;
   const parseid = parseInt(id);
-  const jobs = await getJobs();
+  const jobs = await getJobs({});
   const currentJob = jobs.find((job: JobPosting) => job.id === parseid);
 
   return (
-    <div>
-      <h1>Detalle de la página</h1>
+    <div className="relative">
+      <HeaderDetail data={currentJob} />
       <p>Posición: {currentJob?.location}</p>
     </div>
   );
