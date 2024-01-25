@@ -1,9 +1,9 @@
 import { Suspense } from "react";
-import Navbar from "../components/navbar";
 import BoardSkeleton from "../components/skeleton";
 import Loader from "../components/loader";
 import Header from "../components/header";
 import JobsList from "../components/jobs-list";
+import Navbar from "../components/navbar";
 
 interface searchParamsProps {
   searchParams: {
@@ -27,7 +27,7 @@ export default function Home({ searchParams }: searchParamsProps) {
           fallback={
             <>
               <div className="hidden lg:block my-10 max-w-5xl mx-auto">
-                <BoardSkeleton isDarkMode={false} />
+                <BoardSkeleton />
               </div>
               <div className="lg:hidden block w-full my-20 max-w-5xl mx-auto">
                 <Loader />
