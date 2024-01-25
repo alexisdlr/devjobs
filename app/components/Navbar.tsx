@@ -1,5 +1,5 @@
 "use client";
-import NavbarMobile from "./NavbarMobile";
+import NavbarMobile from "./navbar-mobile";
 import { HiMiniMapPin } from "react-icons/hi2";
 import { usePathname, useRouter } from "next/navigation";
 import { useState } from "react";

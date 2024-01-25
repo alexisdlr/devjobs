@@ -10,7 +10,7 @@ export const getJobs = async ({position, location}: GetJobsProps) => {
       ? "https://https://javascript-quizz-gilt.vercel.app/"
       : "http://localhost:3000/";
     
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Esperar 3 segundos
+    await new Promise(resolve => setTimeout(resolve, 3000)); // Esperar 3 segundos
 
     const response = await fetch(`${API_URL}/data.json`);
     const data = await response.json();

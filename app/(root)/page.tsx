@@ -1,37 +1,41 @@
 import { Suspense } from "react";
-import Board from "../components/Board";
-import Header from "../components/Header";
-import Navbar from "../components/Navbar";
-import BoardSkeleton from "../components/BoardSkeleton";
-
+import Navbar from "../components/navbar";
+import BoardSkeleton from "../components/skeleton";
+import Loader from "../components/loader";
+import Header from "../components/header";
+import JobsList from "../components/jobs-list";
 
 interface searchParamsProps {
   searchParams: {
     position: string;
-    location: string
+    location: string;
   };
 }
 
-export default function Home({searchParams}: searchParamsProps) {
-    const { position, location } = searchParams;
-    return (
-    <main className={` dark:bg-midnight min-h-full transition-all bg-lightgrey`}>
+export default function Home({ searchParams }: searchParamsProps) {
+  const { position, location } = searchParams;
+  return (
+    <main
+      className={` dark:bg-midnight min-h-full transition-all bg-lightgrey`}
+    >
       <div className=" pb-6 ">
         <Header />
         <div className="relative">
           <Navbar />
         </div>
-        <Suspense 
+        <Suspense
           fallback={
             <>
-            <div className="hidden lg:block my-20 max-w-5xl mx-auto">
-              <BoardSkeleton isDarkMode={false} />
-            </div>
-            <div className="lg:hidden block my-20 max-w-5xl mx-auto">cargando...</div>
+              <div className="hidden lg:block my-10 max-w-5xl mx-auto">
+                <BoardSkeleton isDarkMode={false} />
+              </div>
+              <div className="lg:hidden block w-full my-20 max-w-5xl mx-auto">
+                <Loader />
+              </div>
             </>
           }
         >
-          <Board location={location} position={position} />
+          <JobsList location={location} position={position} />
         </Suspense>
 
         <div className="max-w-5xl pb-6 w-full mx-auto flex items-center justify-center">

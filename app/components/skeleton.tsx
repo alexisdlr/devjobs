@@ -75,7 +75,6 @@ const BoardSkeleton = ({
       height={height}
       foregroundColor={'#ecebeb'}
       backgroundColor={'#f3f3f3'}
-      className={'dark:bg-gray-800'}
       {...props}
     >
       {list}

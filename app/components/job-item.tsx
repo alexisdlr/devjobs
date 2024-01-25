@@ -6,7 +6,11 @@ interface JobItemProps {
 
 const JobItem = ({ data }: JobItemProps) => {
   return (
-    <div className="relative bg-white shadow-md dark:bg-verydarkblue rounded-lg mt-10 w-full h-52 max-w-[350px]">
+    <div
+      className="relative bg-white shadow-md dark:bg-verydarkblue rounded-lg w-full h-52 
+    max-w-[300px]	
+    lg:max-w-[350px]"
+    >
       <img
         src={data.logo}
         alt={data.position}
@@ -15,17 +19,22 @@ const JobItem = ({ data }: JobItemProps) => {
       />
       <div className="px-7 mt-10">
         <div className="flex items-center justify-start gap-x-2 text-sm 2xl:text-base">
-          <span className="text-darkgray">{data.postedAt}</span>
+          <span className="text-darkgray dark:text-gray">{data.postedAt}</span>
           <div className="w-1 h-1 bg-slate-500 rounded-full" />
-          <span className="text-darkgray">{data.contract}</span>
+          <span className="text-darkgray dark:text-gray">{data.contract}</span>
         </div>
-        <Link href={`/detail/${data.id}`} className="text-verydarkblue hover:text-darkgray dark:text-white dark:hover:text-darkgray font-bold text-xl my-2 transition-all ">
+        <Link
+          href={`/detail/${data.id}`}
+          className="mt-2 text-verydarkblue hover:text-darkgray dark:text-white dark:hover:text-darkgray font-bold text-lg lg:text-xl my-2 transition-all "
+        >
           {data.position}
         </Link>
-        <div className="flex flex-col text-sm 2xl:text-base">
+        <div className="mt-2 flex flex-col text-sm 2xl:text-base">
           <span className="text-darkgray">{data.company}</span>
-          
-          <span className="text-violet font-semibold mt-10">{data.location}</span>
+
+          <span className="text-violet font-semibold mt-10">
+            {data.location}
+          </span>
         </div>
       </div>
     </div>

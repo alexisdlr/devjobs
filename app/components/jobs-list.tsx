@@ -1,8 +1,8 @@
 import { JobPosting } from "@/types";
-import JobItem from "./JobItem";
+import JobItem from "./job-item";
 import { getJobsByParams } from "@/actions/getJobsByParams";
 
-const Board = async ({
+const JobsList = async ({
   location,
   position,
 }: {
@@ -16,7 +16,7 @@ const Board = async ({
   return (
     <>
       {jobsToShow.length > 0 ? (
-        <div className="my-20 w-full h-full lg:max-w-5xl mx-auto grid gap-x-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
+        <div className="my-20 w-full h-full lg:max-w-5xl mx-auto grid gap-y-12 gap-x-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 place-items-center">
           {jobsToShow.map((job: JobPosting) => (
             <JobItem key={job.id} data={job} />
           ))}
@@ -32,4 +32,4 @@ const Board = async ({
   );
 };
 
-export default Board;
+export default JobsList;
