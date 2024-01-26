@@ -1,7 +1,6 @@
-import Logo from "@/app/components/job-logo";
+import Logo from "@/components/job-logo";
 import { hslToHex } from "@/lib/utils";
 import { JobPosting } from "@/types";
-import Image from "next/image";
 
 interface HeaderDetailProps {
   data: JobPosting;
