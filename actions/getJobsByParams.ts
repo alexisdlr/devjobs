@@ -7,7 +7,7 @@ type GetJobsProps = {
 export const getJobsByParams = async ({position, location}: GetJobsProps) => {
   try {
     const API_URL = process.env.NODE_ENV === "production"
-      ? "https://https://javascript-quizz-gilt.vercel.app/"
+      ? "https://devjobs-dun.vercel.app/"
       : "http://localhost:3000/";
     
     await new Promise(resolve => setTimeout(resolve, 2500)); // Esperar 3 segundos
