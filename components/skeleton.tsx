@@ -1,5 +1,5 @@
 "use client"
-import { useThemeStore } from "@/app/store/darkMode";
+import { useThemeStore } from "@/store/darkMode";
 import ContentLoader from "react-content-loader";
 
 const BoardSkeleton = ({
@@ -19,7 +19,7 @@ const BoardSkeleton = ({
   borderRadius?: number;
 }) => {
   const darkMode = useThemeStore((state) => state.darkMode)
-  console.log(darkMode, 'isDark')
+
   const list = [];
 
   let height;

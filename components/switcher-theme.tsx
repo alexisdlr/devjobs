@@ -1,5 +1,5 @@
 "use client";
-import { useThemeStore } from "@/app/store/darkMode";
+import { useThemeStore } from "@/store/darkMode";
 import { IoMdSunny  } from "react-icons/io";
 import { IoMoon } from "react-icons/io5";
 
