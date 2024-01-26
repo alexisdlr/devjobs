@@ -1,13 +1,13 @@
-"use client"
+"use client";
 import { useThemeStore } from "@/store/darkMode";
 import ContentLoader from "react-content-loader";
 
-const BoardSkeleton = ({
+const Skeleton = ({
   heading = { width: 350, height: 24 },
   row = 4,
   column = 3,
   width = 1024,
-  padding = 10,
+  padding = 5,
   borderRadius = 4,
   ...props
 }: {
@@ -18,7 +18,7 @@ const BoardSkeleton = ({
   padding?: number;
   borderRadius?: number;
 }) => {
-  const darkMode = useThemeStore((state) => state.darkMode)
+  const { darkMode } = useThemeStore();
 
   const list = [];
 
@@ -90,4 +90,4 @@ const BoardSkeleton = ({
   );
 };
 
-export default BoardSkeleton;
+export default Skeleton;

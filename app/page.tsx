@@ -3,7 +3,7 @@ import Header from "@/components/header";
 import JobsList from "@/components/jobs-list";
 import Loader from "@/components/loader";
 import Navbar from "@/components/navbar";
-import BoardSkeleton from "@/components/skeleton";
+import Skeleton from "@/components/skeleton";
 
 
 interface searchParamsProps {
@@ -25,10 +25,11 @@ export default function Home({ searchParams }: searchParamsProps) {
           <Navbar />
         </div>
         <Suspense
+          key={`${position}-${location}`}
           fallback={
             <>
-              <div className="hidden lg:block my-10 max-w-5xl mx-auto">
-                <BoardSkeleton />
+              <div className="hidden lg:block mt-10 max-w-5xl mx-auto">
+                <Skeleton />
               </div>
               <div className="lg:hidden block w-full my-20 max-w-5xl mx-auto">
                 <Loader />
