@@ -22,6 +22,8 @@ export default function Navbar() {
       },
       { skipEmptyString: true, skipNull: true }
     );
+    setLocation(""); 
+    setPosition("");
     router.push(url);
   };
   return (
@@ -65,7 +67,7 @@ export default function Navbar() {
             </label>
           </div>
           <button
-            className="px-6 py-3 ml-auto mr-6 bg-violet rounded-[4px] text-white font-semibold text-sm 2xl:text-base"
+            className="px-6 py-3 ml-auto mr-6 bg-violet rounded-[4px] text-white font-semibold text-sm 2xl:text-base hover:opacity-80 transition-all"
             onClick={onClick}
           >
             Search

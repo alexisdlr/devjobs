@@ -9,11 +9,11 @@ interface ThemeStore {
 export const useThemeStore = create<ThemeStore>()(
   persist(
     (set) => ({
-      darkMode: false,
+      darkMode: localStorage.getItem("darkMode") === "true",
       toggleDarkMode: () => set((state) => ({ darkMode: !state.darkMode })),
     }),
     {
-      name: "theme-storage",
+      name: "theme",
     }
   )
 );

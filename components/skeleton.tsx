@@ -18,8 +18,8 @@ const BoardSkeleton = ({
   padding?: number;
   borderRadius?: number;
 }) => {
-  const darkmode = useThemeStore((state) => state.darkMode)
-  console.log(darkmode)
+  const darkMode = useThemeStore((state) => state.darkMode)
+  console.log(darkMode, 'isDark')
   const list = [];
 
   let height;
@@ -81,8 +81,8 @@ const BoardSkeleton = ({
       viewBox={`0 0 ${width} ${height}`}
       width={width}
       height={height}
-      foregroundColor={darkmode ? "#121721" : "#ecebeb"}
-      backgroundColor={darkmode ? "#19202D" : "#f3f3f3"}
+      foregroundColor={darkMode ? "#121721" : "#ecebeb"}
+      backgroundColor={darkMode ? "#19202D" : "#f3f3f3"}
       {...props}
     >
       {list}
