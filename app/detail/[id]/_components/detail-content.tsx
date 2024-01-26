@@ -1,5 +1,5 @@
 import { JobPosting } from "@/types";
-import { MotionDiv } from "./motion-div";
+import { MotionDiv } from "../../../../components/motion-div";
 
 const DetailContent = ({ data }: { data: JobPosting }) => {
   return (

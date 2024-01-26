@@ -1,9 +1,10 @@
 import { Suspense } from "react";
-import BoardSkeleton from "./components/skeleton";
-import Loader from "./components/loader";
-import Header from "./components/header";
-import JobsList from "./components/jobs-list";
-import Navbar from "./components/navbar";
+import Header from "@/components/header";
+import JobsList from "@/components/jobs-list";
+import Loader from "@/components/loader";
+import Navbar from "@/components/navbar";
+import BoardSkeleton from "@/components/skeleton";
+
 
 interface searchParamsProps {
   searchParams: {

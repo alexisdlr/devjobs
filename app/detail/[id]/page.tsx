@@ -1,7 +1,7 @@
 import { getJobs } from "@/actions/getJobs";
 import { JobPosting } from "@/types";
 import HeaderDetail from "./_components/detail-header";
-import DetailContent from "@/app/components/detail-content";
+import DetailContent from "./_components/detail-content";
 
 export default async function DetailPage({
   params,

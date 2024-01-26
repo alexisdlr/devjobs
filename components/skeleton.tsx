@@ -1,6 +1,6 @@
 "use client"
+import { useThemeStore } from "@/app/store/darkMode";
 import ContentLoader from "react-content-loader";
-import { useThemeStore } from "../store/darkMode";
 
 const BoardSkeleton = ({
   heading = { width: 350, height: 24 },
