@@ -29,6 +29,7 @@ const HeaderDetail = ({ data }: HeaderDetailProps) => {
       <div className="ml-auto flex items-center px-10">
         <Link
           href={data.website}
+          target="_blank"
           className="bg-lightviolet/30 text-violet dark:text-white shadow-md font-semibold dark:bg-[#979797]/30  text-xs lg:text-lg px-6 py-3 rounded-[4px] hover:opacity-80 transition-all"
         >
           Company Site
