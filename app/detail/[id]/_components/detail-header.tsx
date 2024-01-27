@@ -13,20 +13,25 @@ const HeaderDetail = ({ data }: HeaderDetailProps) => {
     backgroundColor: `#${bgHexColor}`,
   };
   const logoSrc = data?.logo.split(".");
-
-  const url = `@`;
   const img = require(`../../../../public${logoSrc[1]}.${logoSrc[2]}`).default;
 
   return (
-    <div className="w-[80%] lg:max-w-3xl h-[130px] absolute inset-x-0 bg-white dark:bg-verydarkblue bottom-[-95px] rounded-[6px] mx-auto my-0 flex shadow-lg overflow-hidden">
-      <Logo src={img.src} style={divStyle} />
-      <div className="h-full flex flex-col items-start gap-y-2 justify-center p-8 pr-0 border-gray">
+    <div className="w-[80%] lg:max-w-3xl md:h-[130px] absolute inset-x-0 bg-white dark:bg-verydarkblue bottom-[-150px] md:bottom-[-95px] rounded-[6px] mx-auto my-0 flex pt-3 md:pt-0 flex-col md:flex-row shadow-lg md:overflow-hidden">
+      <div className="hidden md:block">
+        <Logo src={img.src} style={divStyle} />
+      </div>
+      <img
+        src={img.src}
+        alt="te"
+        className="md:hidden size-12 absolute left-1/2 transform -translate-x-1/2 -top-6"
+      />
+      <div className="h-full flex flex-col items-center md:items-start gap-y-2 justify-center p-4 md:p-8 md:pr-0 border-gray">
         <h2 className="text-verydarkblue dark:text-white text-2xl font-semibold first-letter:uppercase">
           {data.company}
         </h2>
-        <p className="text-darkgray">{data.company}.com</p>
+        <p className="text-darkgray">{data.company.toLocaleLowerCase()}.com</p>
       </div>
-      <div className="ml-auto flex items-center px-10">
+      <div className="md:ml-auto justify-center lg:justify-normal mb-4 flex items-center px-10">
         <Link
           href={data.website}
           target="_blank"

@@ -18,6 +18,9 @@ const config: Config = {
         "verydarkblue": "#19202D",
         "midnight": "#121721",
       },
+      fontFamily: {
+        "kumbh": ["Kumbh Sans", "sans-serif"],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
