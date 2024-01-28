@@ -5,7 +5,6 @@ import Loader from "@/components/loader";
 import Navbar from "@/components/navbar";
 import Skeleton from "@/components/skeleton";
 
-
 interface searchParamsProps {
   searchParams: {
     position: string;
