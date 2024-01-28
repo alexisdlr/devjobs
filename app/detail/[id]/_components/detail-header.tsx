@@ -23,7 +23,7 @@ const HeaderDetail = ({ data }: HeaderDetailProps) => {
       <img
         src={img.src}
         alt="te"
-        className="md:hidden size-12 absolute left-1/2 transform -translate-x-1/2 -top-6"
+        className="md:hidden size-12 absolute left-1/2 transform -translate-x-1/2 -top-[30px]"
       />
       <div className="h-full flex flex-col items-center md:items-start gap-y-2 justify-center p-4 md:p-8 md:pr-0 border-gray">
         <h2 className="text-verydarkblue dark:text-white text-2xl font-semibold first-letter:uppercase">

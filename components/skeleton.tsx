@@ -1,5 +1,6 @@
 "use client";
 import { useThemeStore } from "@/store/dark-mode";
+import React from "react";
 import ContentLoader from "react-content-loader";
 
 const Skeleton = ({
@@ -85,7 +86,11 @@ const Skeleton = ({
       backgroundColor={darkMode ? "#19202D" : "#f3f3f3"}
       {...props}
     >
-      {list}
+      {list.map((item, index) => (
+        <React.Fragment key={`skeleton-item-${index}`}>
+          {item}
+        </React.Fragment>
+      ))}
     </ContentLoader>
   );
 };

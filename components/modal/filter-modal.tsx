@@ -22,7 +22,7 @@ export default function FilterModal({ onClick, onChange }: FilterModalProps) {
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-90" onClose={handleClose}>
+        <Dialog as="div" className="relative z-90" onClose={onClose}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -46,13 +46,8 @@ export default function FilterModal({ onClick, onChange }: FilterModalProps) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-md dark:bg-verydarkblue bg-white p-6 text-left align-middle shadow-xl transition-all">
-                  <Dialog.Title
-                    as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
-                  >
-                    Filter
-                  </Dialog.Title>
+                <Dialog.Panel className="w-full max-w-md pointer-events-none transform overflow-hidden rounded-md dark:bg-verydarkblue bg-white p-6 text-left align-middle shadow-xl transition-all">
+                
                   <div className=" w-full h-full flex items-center justify-start border-b py-3 pl-2 border-gray my-2">
                     <div className="w-full flex items-center">
                       <span>

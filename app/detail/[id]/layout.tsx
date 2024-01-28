@@ -7,10 +7,8 @@ export default function DetailLayout({
 }) {
   return (
     <main className={`dark:bg-midnight min-h-full transition-all bg-lightgrey`}>
-      <div className="pb-6">
         <Header />
         {children}
-      </div>
     </main>
   );
 }
