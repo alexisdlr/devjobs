@@ -9,6 +9,7 @@ import { FaSearch } from "react-icons/fa";
 export default function Navbar() {
   const [location, setLocation] = useState("");
   const [position, setPosition] = useState("");
+
   const router = useRouter();
   const pathname = usePathname();
   const onClick = () => {
@@ -27,7 +28,7 @@ export default function Navbar() {
     router.push(url);
   };
   return (
-    <div className="w-[80%] md:w-full md:max-w-3xl lg:max-w-5xl h-[80px] absolute inset-x-0 bg-white dark:bg-verydarkblue bottom-[-30px] rounded-[6px] mx-auto my-0 flex shadow-lg transition-all">
+    <div className="w-full max-w-[327px] md:w-full md:max-w-3xl lg:max-w-5xl h-[80px] absolute inset-x-0 bg-white dark:bg-verydarkblue bottom-[-45px] rounded-[6px] mx-auto my-0 flex shadow-lg transition-all">
       <NavbarMobile />
       <div className=" w-1/3 h-full hidden md:flex items-center justify-start border-r p-6 border-gray">
         <div className="w-full flex items-center text-sm 2xl:text-base">

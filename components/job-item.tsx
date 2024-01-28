@@ -12,7 +12,7 @@ const JobItem = ({ data }: JobItemProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       className="relative bg-white shadow-md dark:bg-verydarkblue rounded-lg w-full h-52 
-    max-w-[300px]	
+    max-w-[327px]	
     lg:max-w-[350px]"
     >
       <img
