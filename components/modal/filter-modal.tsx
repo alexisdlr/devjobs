@@ -17,12 +17,11 @@ export default function FilterModal({ onClick, onChange }: FilterModalProps) {
       onClick();
     }
     onClose();
-
   };
   return (
     <>
       <Transition appear show={isOpen} as={Fragment}>
-        <Dialog as="div" className="relative z-90" onClose={onClose}>
+        <Dialog as="div" className="relative z-10" onClose={onClose}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -46,8 +45,7 @@ export default function FilterModal({ onClick, onChange }: FilterModalProps) {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-md pointer-events-none transform overflow-hidden rounded-md dark:bg-verydarkblue bg-white p-6 text-left align-middle shadow-xl transition-all">
-                
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-md dark:bg-verydarkblue bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <div className=" w-full h-full flex items-center justify-start border-b py-3 pl-2 border-gray my-2">
                     <div className="w-full flex items-center">
                       <span>
@@ -62,7 +60,10 @@ export default function FilterModal({ onClick, onChange }: FilterModalProps) {
                     </div>
                   </div>
                   <div className="flex items-center justify-start gap-2 my-2">
-                    <div className="inline-flex items-center">
+                    <div
+                      className="inline-flex items-center"
+                      onClick={(e) => e.stopPropagation()}
+                    >
                       <label
                         className="relative flex items-center p-3 rounded-full cursor-pointer"
                         htmlFor="checkbox"
