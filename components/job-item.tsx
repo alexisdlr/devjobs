@@ -1,6 +1,6 @@
 import { JobPosting } from "@/types";
 import Link from "next/link";
-import { MotionDiv } from "./motion-div";
+import { MotionDiv } from "./animated/motion-div";
 
 interface JobItemProps {
   data: JobPosting;

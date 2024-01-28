@@ -7,7 +7,7 @@ const kumbh_Sans = Kumbh_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Alxs | Devjobs",
-  description: "Devjobs is a job board for developers",
+  description: "Devjobs is a job board for developers"
 };
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en"> 
       <body className={`${kumbh_Sans.className}`}>
         <ThemeProvider>{children}</ThemeProvider>
       </body>

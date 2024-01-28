@@ -1,6 +1,6 @@
 import { JobPosting } from "@/types";
 import JobItem from "./job-item";
-import { getJobsByParams } from "@/actions/getJobsByParams";
+import { getJobs } from "@/actions/getJobs";
 
 const JobsList = async ({
   location,
@@ -9,7 +9,7 @@ const JobsList = async ({
   location?: string;
   position?: string;
 }) => {
-  const jobs = await getJobsByParams({ position, location });
+  const jobs = await getJobs({ position, location });
 
   const numJobsToShow = 12;
   const jobsToShow = jobs.slice(0, numJobsToShow);

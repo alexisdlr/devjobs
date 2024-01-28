@@ -55,7 +55,7 @@ export default function Navbar() {
           />
         </div>
       </div>
-      <div className=" w-1/3 h-full hidden md:flex items-center justify-start p-6 pr-0 border-gray">
+      <div className="w-1/3 h-full hidden md:flex items-center justify-start p-6 pr-0 border-gray">
         <div className="w-full flex items-center justify-start gap-x-4 text-sm 2xl:text-base">
           <div className="flex items-center gap-x-2 lg:gap-x-4">
             <div className="inline-flex items-center">

@@ -7,7 +7,7 @@ const DetailContent = ({ data }: { data: JobPosting }) => {
     <MotionDiv
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className="mt-44 shadow-lg bg-white rounded-md dark:text-white px-4 md:px-6 lg:px-10 py-10 lg:py-14 dark:bg-verydarkblue w-[80%] lg:max-w-3xl mx-auto"
+      className="mt-44 md:mt-36 shadow-lg bg-white rounded-md dark:text-white px-4 md:px-6 lg:px-10 py-10 lg:py-14 dark:bg-verydarkblue w-[80%] lg:max-w-3xl mx-auto"
     >
       <div className="flex gap-x-2 items-center text-xs lg:text-sm">
         <span className="text-darkgray dark:text-gray">{data?.postedAt}</span>

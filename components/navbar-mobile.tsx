@@ -8,7 +8,7 @@ const NavbarMobile = () => {
           <div className="flex gap-x-2 mx-2 items-center">
             <input
               type="text"
-              className="w-full text-sm text-verydarkblue bg-transparent outline-none border-none pl-2"
+              className="w-full text-sm text-verydarkblue dark:text-lightgrey bg-transparent outline-none border-none pl-2"
               placeholder="Filter by title..."
             />
           </div>
