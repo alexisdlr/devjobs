@@ -2,9 +2,10 @@
 import NavbarMobile from "./navbar-mobile";
 import { HiMiniMapPin } from "react-icons/hi2";
 import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import qs from "query-string";
 import { FaSearch } from "react-icons/fa";
+import FilterModal from "./modal/filter-modal";
 
 export default function Navbar() {
   const [location, setLocation] = useState("");
@@ -27,8 +28,14 @@ export default function Navbar() {
     setPosition("");
     router.push(url);
   };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setPosition(e.target.value);
+  };
+  
   return (
     <div className="w-full max-w-[327px] md:w-full md:max-w-3xl lg:max-w-5xl h-[80px] absolute inset-x-0 bg-white dark:bg-verydarkblue bottom-[-45px] rounded-[6px] mx-auto my-0 flex shadow-lg transition-all">
+      <FilterModal onChange={handleChange} onClick={onClick} />
       <NavbarMobile />
       <div className=" w-1/3 h-full hidden md:flex items-center justify-start border-r p-6 border-gray">
         <div className="w-full flex items-center text-sm 2xl:text-base">
