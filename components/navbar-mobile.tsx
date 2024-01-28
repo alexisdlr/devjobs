@@ -3,8 +3,10 @@ import { usePathname, useRouter } from "next/navigation";
 import qs from "query-string";
 import { useState } from "react";
 import { FaFilter, FaSearch } from "react-icons/fa";
+import useModalStore from "@/store/filter-modal-store";
 
 const NavbarMobile = () => {
+  const onOpen = useModalStore((state) => state.onOpen);
   const [location, setLocation] = useState("");
   const [position, setPosition] = useState("");
 
@@ -39,7 +41,7 @@ const NavbarMobile = () => {
           </div>
           <div className="ml-auto flex gap-x-2 items-center">
             <button className="active:opacity-80 transition">
-              <FaFilter size={24} className="text-darkgray" />
+              <FaFilter onClick={onOpen}  size={24} className="text-darkgray" />
             </button>
             <button
               onClick={onClick}

@@ -4,6 +4,7 @@ import JobsList from "@/components/jobs-list";
 import Loader from "@/components/loader";
 import Navbar from "@/components/navbar";
 import Skeleton from "@/components/skeleton";
+import FilterModal from "@/components/modal/filter-modal";
 
 
 interface searchParamsProps {
@@ -19,6 +20,7 @@ export default function Home({ searchParams }: searchParamsProps) {
     <main
       className={` dark:bg-midnight min-h-full transition-all bg-lightgrey`}
     >
+      <FilterModal />
       <div className=" pb-6 ">
         <Header />
         <div className="relative">
