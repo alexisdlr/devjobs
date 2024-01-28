@@ -2,7 +2,7 @@ import { JobPosting } from "@/types";
 
 const DetailFooter = ({ data }: { data: JobPosting }) => {
   return (
-    <footer className="w-full h-20 md:h-24 mt-6 bg-verydarkblue flex justify-center items-center">
+    <footer className="w-full h-20 md:h-24 mt-10 md:mt-16 bg-white shadow-xl dark:bg-verydarkblue flex justify-center items-center">
       <div className="w-full max-w-3xl mx-auto flex justify-center md:justify-between items-center">
         <div className="hidden md:block">
           <h2 className="dark:text-white font-bold text-xl text-verydarkblue">

@@ -29,7 +29,7 @@ const NavbarMobile = () => {
     router.push(url);
   };
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setPosition(e.target.value);
+    setLocation(e.target.value);
   };
 
   return (
