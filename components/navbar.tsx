@@ -5,12 +5,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 import qs from "query-string";
 import { FaSearch } from "react-icons/fa";
-import FilterModal from "./modal/filter-modal";
 
 export default function Navbar() {
   const [location, setLocation] = useState("");
   const [position, setPosition] = useState("");
-
+  const [fulltime, setFulltime] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
   const onClick = () => {
@@ -20,6 +19,7 @@ export default function Navbar() {
         query: {
           location: location,
           position: position,
+          full_time: fulltime,
         },
       },
       { skipEmptyString: true, skipNull: true }
@@ -68,6 +68,7 @@ export default function Navbar() {
               >
                 <input
                   type="checkbox"
+                  onClick={() => setFulltime(!fulltime)}
                   className="before:content[''] peer relative size-6 cursor-pointer appearance-none rounded-md border border-darkgray checked:border-0 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-blue-700 checked:before:bg-midnight hover:before:opacity-10"
                   id="checkbox"
                   defaultChecked={false}

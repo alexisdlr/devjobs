@@ -3,8 +3,9 @@ import { JobPosting } from "@/types";
 type GetJobsProps = {
   position?: string;
   location?: string;
+  fulltime?: boolean;
 };
-export const getJobs = async ({position, location}: GetJobsProps) => {
+export const getJobs = async ({position, location, fulltime}: GetJobsProps) => {
   try {
     const API_URL = process.env.NODE_ENV === "production"
       ? "https://devjobs-dun.vercel.app/"
@@ -14,6 +15,11 @@ export const getJobs = async ({position, location}: GetJobsProps) => {
 
     const response = await fetch(`${API_URL}/data.json`);
     const data = await response.json();
+
+    if (fulltime) {
+      const filteredData = data.filter((job: JobPosting) => job.contract === "Full Time");
+      return filteredData;
+    }
     if (position && location) {
       const filteredData = data.filter((job: JobPosting) => job.position.toLowerCase().includes(position.toLowerCase()) && job.location.toLowerCase().includes(location.toLowerCase()))
       return filteredData;

@@ -9,11 +9,12 @@ interface searchParamsProps {
   searchParams: {
     position: string;
     location: string;
+    full_time: string;
   };
 }
 
 export default function Home({ searchParams }: searchParamsProps) {
-  const { position, location } = searchParams;
+  const { position, location, full_time } = searchParams;
   return (
     <main
       className={` dark:bg-midnight min-h-full transition-all bg-lightgrey`}
@@ -36,7 +37,7 @@ export default function Home({ searchParams }: searchParamsProps) {
             </>
           }
         >
-          <JobsList location={location} position={position} />
+          <JobsList location={location} position={position} fulltime={full_time} />
         </Suspense>
 
         <div className="max-w-5xl pb-6 w-full mx-auto flex items-center justify-center">

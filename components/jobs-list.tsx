@@ -5,11 +5,14 @@ import { getJobs } from "@/actions/getJobs";
 const JobsList = async ({
   location,
   position,
+  fulltime,
 }: {
   location?: string;
   position?: string;
+  fulltime?: string;
 }) => {
-  const jobs = await getJobs({ position, location });
+  const isFulltime = fulltime === "true";
+  const jobs = await getJobs({ position, location, fulltime: isFulltime });
 
   const numJobsToShow = 12;
   const jobsToShow = jobs.slice(0, numJobsToShow);
