@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { usePathname, useRouter } from "next/navigation";
 import qs from "query-string";
 import { useState } from "react";
@@ -7,7 +7,7 @@ import { FaFilter, FaSearch } from "react-icons/fa";
 const NavbarMobile = () => {
   const [location, setLocation] = useState("");
   const [position, setPosition] = useState("");
-  
+
   const router = useRouter();
   const pathname = usePathname();
   const onClick = () => {
@@ -38,8 +38,13 @@ const NavbarMobile = () => {
             />
           </div>
           <div className="ml-auto flex gap-x-2 items-center">
-            <FaFilter size={24} className="text-darkgray" />
-            <button onClick={onClick} className="p-3 rounded-md bg-violet">
+            <button className="active:opacity-80 transition">
+              <FaFilter size={24} className="text-darkgray" />
+            </button>
+            <button
+              onClick={onClick}
+              className="p-3 rounded-md bg-violet active:opacity-80 transition"
+            >
               <FaSearch size={16} className="text-white" />
             </button>
           </div>

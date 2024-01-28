@@ -1,5 +1,5 @@
 "use client";
-import { useThemeStore } from "@/store/darkMode";
+import { useThemeStore } from "@/store/dark-mode";
 import ContentLoader from "react-content-loader";
 
 const Skeleton = ({

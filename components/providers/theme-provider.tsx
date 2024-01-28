@@ -1,5 +1,5 @@
 "use client"
-import { useThemeStore } from '@/store/darkMode';
+import { useThemeStore } from '@/store/dark-mode';
 import React, { ReactNode } from 'react';
 
 interface ThemeProviderProps {
