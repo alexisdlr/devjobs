@@ -7,7 +7,7 @@ const Header = () => {
     <MotionHeader
       initial={{ opacity: 0 }}
       animate={{ opacity: 100 }}
-      transition={{ delay: 0.2, duration: 0.5}}
+      transition={{ delay: 0.5}}
       className="w-full h-[130px] md:h-[120px] lg:h-[160px] relative bg-[url('/assets/mobile/bg-pattern-header.svg')] lg:bg-[url('/assets/header.png')] mx-auto my-0"
     >
       <div className="w-full h-full lg:h-[160px] lg:rounded-bl-full">
