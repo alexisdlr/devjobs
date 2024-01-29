@@ -7,7 +7,10 @@ const kumbh_Sans = Kumbh_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Alxs | Devjobs",
-  description: "Devjobs is a job board for developers"
+  description: "Devjobs is a job board for developers",
+  icons: {
+    icon: '/favicon.ico',
+  }
 };
 
 export default function RootLayout({
